@@ -19,7 +19,7 @@
             <td>{{ item.name }}</td>
             <td>{{ item.gender }}</td>
             <td>
-              <router-link :to="{ name: 'heroedit', params: { id: item.id } }">编辑</router-link>
+              <router-link :to="{ name: 'heroedit', params: { id: item.id } }">edit</router-link>
               &nbsp;&nbsp;
               <!-- <a href="javascript:window.confirm('Are you sure?')">delete</a> -->
               <a href="#" @click.prevent="handleDelete(item.id)">delete</a>
