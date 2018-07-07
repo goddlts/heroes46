@@ -130,6 +130,27 @@ const router = new VueRouter({
 - App.vue 中合适的位置放置 <router-view></router-view>
 
 
+## 配置导航菜单
+
+- AppSidebar.vue中
+```html
+<router-link tag="li" to="/heroes">
+  <a>英雄列表</a>
+</router-link>
+<router-link tag="li" to="/weapons">
+  <a>武器列表</a>
+</router-link>
+<router-link tag="li" to="/equips">
+  <a>装备列表</a>
+</router-link>
+```
+- router.js中
+```js
+// 全局配置激活样式
+const router = new VueRouter({
+  linkExactActiveClass: 'active',
+```
+
 > A Vue.js project
 
 ## Build Setup
