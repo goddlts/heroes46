@@ -16,10 +16,9 @@
 </template>
 
 <script>
-import axios from 'axios';
 // 1 绑定文本框
 // 2 添加按钮注册事件
-// 3 发送请求 -- 导入axios
+// 3 发送请求 -- 
 
 
 export default {
@@ -34,8 +33,8 @@ export default {
   },
   methods: {
     handleAdd() {
-      axios
-        .post('http://localhost:3000/heroes', this.formData)
+      this.$http
+        .post('heroes', this.formData)
         .then((res) => {
           const { status, data } = res;
           if (status === 201) {
