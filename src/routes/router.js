@@ -6,6 +6,8 @@ import VueRouter from 'vue-router';
 import HeroList from '../views/heroes/List.vue';
 import WeaponList from '../views/weapons/List.vue';
 import EquipList from '../views/equips/List.vue';
+// 导入添加英雄的组件
+import HeroAdd from '../views/heroes/Add.vue';
 
 // 注册插件
 // https://cn.vuejs.org/v2/guide/plugins.html
@@ -20,7 +22,8 @@ const router = new VueRouter({
     // 路由规则
     { name: 'heroes', path: '/heroes', component: HeroList },
     { name: 'weapons', path: '/weapons', component: WeaponList },
-    { name: 'equips', path: '/equips', component: EquipList }
+    { name: 'equips', path: '/equips', component: EquipList },
+    { name: 'heroadd', path: '/heroes/add', component: HeroAdd }
   ]
 });
 
