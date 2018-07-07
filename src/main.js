@@ -8,13 +8,21 @@ import router from './routes/router';
 // 导入css
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import './assets/css/index.css';
+import MyAxios from './plugins/myaxios';
+
+// 注册MyAxios插件
+Vue.use(MyAxios);
 
 // 导入axios
-import axios from 'axios';
-// 设置baseURL
-axios.defaults.baseURL = 'http://localhost:3000/';
-// 配置所有Vue的实例都具有$http这个成员
-Vue.prototype.$http = axios;
+// import axios from 'axios';
+// // 设置baseURL
+// axios.defaults.baseURL = 'http://localhost:3000/';
+// // 配置所有Vue的实例都具有$http这个成员
+// Vue.prototype.$http = axios;
+
+
+// Vue.prototype.$router =..;
+// Vue.use(VueRouter);
 
 new Vue({
   el: '#app',
