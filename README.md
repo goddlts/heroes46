@@ -35,6 +35,23 @@ src/components   -- 放通用的组件（跟路由无关）
 src/views        -- 视图(页面)，跟路由相关的组件
 src/routes       -- 路由对象
 
+## 首页
+
+1. 把index.html复制到App.vue, 必须有且只有一个根节点
+2. 安装bootstrap@3.3.7
+3. 引入css，main.js中导入bootstrap.css 导入index.css
+4. webpack的配置文件中，没有配置字体，配置webpack.config.js
+
+```js
+{
+  test: /\.(ttf|woff2|woff|eot)$/,
+  loader: 'file-loader',
+  options: {
+    name: '[name].[ext]?[hash]'
+  }
+}
+```
+
 ## 提取公共的组件(AppHeader  AppSidebar)
 
 1. App.vue中把header对应的html剪切
@@ -61,22 +78,39 @@ components: {
 ```
 6. 在App.vue的template中 使用组件 <app-header></app-header>
 
-## 首页
 
-1. 把index.html复制到App.vue, 必须有且只有一个根节点
-2. 安装bootstrap@3.3.7
-3. 引入css，main.js中导入bootstrap.css 导入index.css
-4. webpack的配置文件中，没有配置字体，配置webpack.config.js
 
+## 配置路由对象
+
+- 安装 vue-router
+- 在routers创建router.js
+- router.js 
 ```js
-{
-  test: /\.(ttf|woff2|woff|eot)$/,
-  loader: 'file-loader',
-  options: {
-    name: '[name].[ext]?[hash]'
-  }
-}
+// 1. 导入vue-router
+import VueRouter from 'vue-router';
+// 2. 创建路由对象，配置路由规则
+const router = new VueRouter({
+  routes: [
+    // 路由规则
+    {  }
+  ]
+});
+// 3 导出模块
+export default router;
 ```
+
+- 在main.js中配置路由对象
+```js
+// 1 导入路由对象
+import router from './routes/router';
+// 2  在vue的实例中配置
+// 配置路由对象
+router
+``` 
+
+
+## 配置路由规则
+
 
 > A Vue.js project
 
