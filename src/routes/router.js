@@ -8,11 +8,15 @@ import WeaponList from '../views/weapons/List.vue';
 import EquipList from '../views/equips/List.vue';
 
 // 注册插件
+// https://cn.vuejs.org/v2/guide/plugins.html
 Vue.use(VueRouter);
 
 // 2. 创建路由对象，配置路由规则
 const router = new VueRouter({
+  linkExactActiveClass: 'active',
   routes: [
+    // { name: 'home', path: '/', redirect: '/heroes' },
+    { name: 'home', path: '/', redirect: { name: 'heroes' } },
     // 路由规则
     { name: 'heroes', path: '/heroes', component: HeroList },
     { name: 'weapons', path: '/weapons', component: WeaponList },

@@ -111,6 +111,24 @@ router
 
 ## 配置路由规则
 
+- router.js 导入vue
+- 注册VueRouter组件  Vue.use(VueRouter)
+- 配置路由规则
+```js
+const router = new VueRouter({
+  routes: [
+    // 配置跟路径
+    { name: 'home', path: '/',  redirect: '/heroes'  },
+    // 路由规则
+    { name: 'heroes', path: '/heroes', component: HeroList },
+    { name: 'weapons', path: '/weapons', component: WeaponList },
+    { name: 'equips', path: '/equips', component: EquipList }
+  ]
+});
+```
+- 在views创建相应的组件
+- App.vue 中合适的位置放置 <router-view></router-view>
+
 
 > A Vue.js project
 
